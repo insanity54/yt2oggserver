@@ -1,1 +1,1 @@
-# yt2oggserver
+# Skeleton project for Swagger
