@@ -11,6 +11,7 @@
   It is a good idea to list the modules that your application depends on in the package.json in the project root
  */
 var util = require('util');
+require('youtube-dl-installer');
 var ffmpeg = require('fluent-ffmpeg');
 var ytdl2 = require('ytdl-run');
 
