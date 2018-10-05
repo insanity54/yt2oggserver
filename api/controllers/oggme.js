@@ -11,9 +11,8 @@
   It is a good idea to list the modules that your application depends on in the package.json in the project root
  */
 var util = require('util');
-//require('youtube-dl-installer');
 var ffmpeg = require('fluent-ffmpeg');
-var ytdl2 = require('ytdl-run');
+var ytdl = require('ytdl-run-ng');
 
 
 /*
@@ -55,7 +54,7 @@ function oggme(req, res) {
   //   'bestaudio'
   // ])
 
-  var v = ytdl2.stream(opts).stdout
+  var v = ytdl.stream(opts).stdout
 
   res.attachment().set('Content-Type', 'audio/ogg');
   ffmpeg(v)
