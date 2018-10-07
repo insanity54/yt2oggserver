@@ -1,0 +1,21 @@
+version: '3.2'
+services:
+  node:
+    build: .
+    user: node
+    working_dir: /home/node/app
+    #command: ["ls", "-la", "/home/node/app/"]
+    command: ["/home/node/app/starto.sh"]
+    #command: ["which", "npm"]
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - 8080:10010
+  ffmpeg:
+
+volumes:
+  ffmpeg
+    
+
+
+

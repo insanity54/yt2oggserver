@@ -2,6 +2,15 @@
 
 var SwaggerExpress = require('swagger-express-mw');
 var app = require('express')();
+var cors = require('cors');
+
+var corsOptions = {
+  origin: 'http://127.0.0.1:10010',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+app.use(cors(corsOptions));
+
 module.exports = app; // for testing
 
 var config = {

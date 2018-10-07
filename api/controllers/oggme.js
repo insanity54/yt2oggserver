@@ -41,18 +41,14 @@ function oggme(req, res) {
   // variables defined in the Swagger document can be referenced using req.swagger.params.{parameter_name}
 
 
-  //var url = req.swagger.params.url.value || 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
-  const url = 'https://www.youtube.com/watch?v=IgbO5pilG5I';
+  var url = req.swagger.params.url.value || 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+  //const url = 'https://www.youtube.com/watch?v=IgbO5pilG5I';
 
   const opts = [
     '-f', 'bestaudio', url
   ];
 
   console.log(`oggdd ${url}`)
-  // var video = youtubedl(url [
-  //   '-f',
-  //   'bestaudio'
-  // ])
 
   var v = ytdl.stream(opts).stdout
 

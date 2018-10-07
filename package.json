@@ -8,10 +8,10 @@
   "license": "",
   "main": "app.js",
   "dependencies": {
+    "cors": "^2.8.4",
     "express": "^4.12.3",
     "fluent-ffmpeg": "^2.1.2",
     "swagger-express-mw": "^0.1.0",
-    "youtube-dl-installer": "^1.0.1",
     "ytdl-run-ng": "^0.1.2"
   },
   "devDependencies": {
