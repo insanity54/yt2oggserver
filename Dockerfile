@@ -6,7 +6,9 @@ RUN set -xe \
         python3 \
     && pip3 install youtube-dl
 WORKDIR /home/node/app
-ADD Procfile CHECKS app.js api/ config/ package.json package-lock.json swagger-config.yaml /home/node/app/
-RUN npm install && ls -la
+ADD CHECKS Procfile app.js package-lock.json package.json swagger-config.yaml /home/node/app/
+ADD api/ /home/node/app/api
+ADD config/ /home/node/app/config
+RUN npm install
 EXPOSE 10010
 USER node
