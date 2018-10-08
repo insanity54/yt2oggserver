@@ -1,8 +1,11 @@
 'use strict';
 
 var SwaggerExpress = require('swagger-express-mw');
-var app = require('express')();
+var express = require('express')
+var app = express();
 var cors = require('cors');
+const pathToSwaggerUi = require('swagger-ui-dist').absolutePath()
+
 
 var corsOptions = {
   origin: 'http://127.0.0.1:10010',
@@ -10,6 +13,7 @@ var corsOptions = {
 }
 
 app.use(cors(corsOptions));
+app.use(express.static(pathToSwaggerUi))
 
 module.exports = app; // for testing
 
@@ -27,6 +31,6 @@ SwaggerExpress.create(config, function(err, swaggerExpress) {
   app.listen(port);
 
   if (swaggerExpress.runner.swagger.paths['/hello']) {
-    console.log('try this:\ncurl http://127.0.0.1:' + port + '/hello?name=Scott');
+    console.log('try this:\ncurl http://127.0.0.1:' + port + '/oggme?url=https://www.youtube.com/watch?v=M3ruhqJBSug');
   }
 });
